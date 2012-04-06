@@ -1,0 +1,394 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"have",
+				"have_selector"
+			],
+			[
+				"e",
+				"eav	each_value { |val| .. }"
+			],
+			[
+				"ea",
+				"ea	each { |e| .. }"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"bas",
+				"base_title"
+			],
+			[
+				"st",
+				"static_pages"
+			],
+			[
+				"C",
+				"Contact"
+			],
+			[
+				"border",
+				"border	border-right-color: color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/helpers/application_helper.rb",
+			"settings":
+			{
+				"buffer_size": 242,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 259,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "spec/requests/static_pages_spec.rb",
+			"settings":
+			{
+				"buffer_size": 1609,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/static_pages/home.html.erb",
+			"settings":
+			{
+				"buffer_size": 150,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/Ruby/Ruby.sublime-build",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"Snippet: lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				":2",
+				"Snippet: step(2) { |e| .. }"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: <?php if (…) ?> … <?php endif ?>"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"discove",
+				"Package Control: Discover Packages"
+			],
+			[
+				":split",
+				"Snippet: class .. < ParentClass .. initialize .. end"
+			],
+			[
+				":q",
+				"Set Syntax: SQL"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/spec/tmp.rb",
+		"/Users/troyrosenberg/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/bin/spork",
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/app/controllers/static_pages_controller.rb",
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/Gemfile",
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/.gitignore",
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/spec/requests/static_pages_spec.rb",
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/app/views/static_pages/home.html.erb",
+		"/Users/troyrosenberg/Repo/TeamRuby/railstutorial/sample_app/config/routes.rb",
+		"/Users/troyrosenberg/Repo/DataComm_Project3/client.cpp",
+		"/Users/troyrosenberg/Desktop/untitled",
+		"/Users/troyrosenberg/Dropbox/Python/fibb.py"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sqlite3",
+			"side"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"postgresql"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/helpers/application_helper.rb",
+					"settings":
+					{
+						"buffer_size": 242,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								241,
+								241
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby on Rails.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 259,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								259,
+								259
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "spec/requests/static_pages_spec.rb",
+					"settings":
+					{
+						"buffer_size": 1609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								724,
+								724
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/RSpec.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/static_pages/home.html.erb",
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.tests":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"home",
+				"app/views/static_pages/home.html.erb"
+			],
+			[
+				"spo",
+				"bin/spork"
+			],
+			[
+				"spor",
+				"bin/spork"
+			],
+			[
+				"guar",
+				"Guardfile"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"control",
+				"app/controllers/static_pages_controller.rb"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 208.0,
+	"status_bar_visible": true
+}
