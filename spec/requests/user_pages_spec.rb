@@ -45,6 +45,7 @@ describe "User pages" do
         end
         # Should not be able to delete itself
         it { should_not have_link('delete', href: user_path(:admin))}
+        end
       end
     end
   end
@@ -130,7 +131,7 @@ describe "User pages" do
         fill_in "Name",             with: new_name
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
+        fill_in "Confirmation", with: user.password
         click_button "Save changes"
       end
 
@@ -140,8 +141,6 @@ describe "User pages" do
       specify { user.reload.name.should  == new_name }
       specify { user.reload.email.should == new_email }
     end
-
   end
-
 
 end

@@ -36,6 +36,14 @@ describe User do
   it { should be_valid } # just making sure the initial user ^ is valid
   it { should_not be_admin}
 
+  describe "accessible attributes" do
+    it "should not allow access to admin" do
+      expect do
+        User.new(admin: true)
+      end.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
+    end
+  end
+
   describe "with admin attribute set to 'true'" do
     before { @user.toggle!(:admin)}
 

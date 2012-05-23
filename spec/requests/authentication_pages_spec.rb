@@ -14,13 +14,19 @@ describe "Authentication" do
   describe "signin" do
     before { visit signin_path }
 
-    describe "with invalid information" do
+    describe "with invalid information"
       before { click_button "Sign in" }
 
       it { should have_selector('title', text: 'Sign in') }
       it { should have_error_message }
+      # Also check that it doesn't have any links that
+      # should only be available to users
+      it { should_not have_link('Users', href: users_path) }
+      it { should_not have_link('Profile') }
+      it { should_not have_link('Settings')}
+      it { should_not have_link('Sign out', href: signout_path) }
 
-      describe "after visitinf another page" do
+      describe "after visiting another page" do
       	before { click_link "Home" }
         it { should_not have_error_message }
       end
@@ -40,7 +46,20 @@ describe "Authentication" do
       it { should have_link('Sign out', href: signout_path) }
 
       it { should_not have_link('Sign in', href: signin_path)}
-    end
+
+      describe "should not allow user to go to" do
+        describe "signup page" do
+          before { visit signup_path }
+          it { should_not have_selector('title', text: full_title('Sign up')) }
+          it { should have_selector('title', text: full_title('')) }
+        end
+
+        describe "signin page" do
+          before { visit signin_path }
+          it { should_not have_selector('title', text: full_title('Sign in')) }
+          it { should have_selector('title', text: full_title('')) }
+        end
+      end
   end
 
   describe "authorization" do
@@ -59,6 +78,7 @@ describe "Authentication" do
           specify { response.should redirect_to(signin_path) }
         end
 
+        # This tests friendly forwarding
         describe "when attempting to visit a protected page" do
           before do
             visit edit_user_path(user)
@@ -71,6 +91,21 @@ describe "Authentication" do
           describe "after signing in" do
             it "should render the desired protected page" do
               page.should have_selector('title', text: 'Edit user')
+            end
+
+            describe "when signing in again" do
+              before  do
+                # Have to sign out first because signed in users
+                # are redirected away from sign in page
+                click_link "Sign out"
+                visit signin_path
+                fill_in "Email", with: user.email
+                fill_in "Password", with: user.password
+                click_button "Sign in"
+              end
+              it "should render the default (profile) page" do
+                page.should have_selector('title', text: user.name)
+              end
             end
           end
         end
@@ -107,6 +142,17 @@ describe "Authentication" do
       describe "submitting a DELETE request to the Users#destroy action" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_path)}
+      end
+    end
+
+    describe "as admin user" do
+      let(:admin) { FactoryGirl.create(:admin) }
+
+      before {valid_signin admin}
+
+      describe "submitting DELETE request on themself to Users#destroy action" do
+        before { delete user_path(admin) }
+        specify { response.should redirect_to(root_path) }
       end
     end
   end
