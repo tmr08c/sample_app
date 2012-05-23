@@ -9,18 +9,19 @@
 #  updated_at      :datetime        not null
 #  password_digest :string(255)
 #  remember_token  :string(255)
+#  admin           :boolean         default(FALSE)
 #
 
 require 'spec_helper'
 
 
 describe User do
-  
+
   before { @user = User.new(name: "Example User", email: "user@example.com",
                             password: "foobar", password_confirmation: "foobar") }
 
   subject { @user }
-	
+
   it { should respond_to(:name)  }
   it { should respond_to(:email) }
   it { should respond_to(:password_digest) }
@@ -28,16 +29,25 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token)}
+
+  it {should respond_to(:admin) }
   it { should respond_to(:authenticate) }
 
   it { should be_valid } # just making sure the initial user ^ is valid
+  it { should_not be_admin}
+
+  describe "with admin attribute set to 'true'" do
+    before { @user.toggle!(:admin)}
+
+    it { should be_admin}
+  end
 
   # Testing Validations
 
-  #NAME 
+  #NAME
 
   # Name Presence  Validations
-  describe "when name is not present" do 
+  describe "when name is not present" do
   	before { @user.name = "" }
   	it { should_not be_valid }
   end
@@ -51,14 +61,14 @@ describe User do
   # end NAME
 
   #EMAIL
-  describe "when email is not present" do 
+  describe "when email is not present" do
   	before { @user.email = "" }
   	it { should_not be_valid }
   end
 
   describe "when email format is invalid" do
   	it "should be invalid" do
-	  	addresses = %w[ user@foo,com user_at_foo.org 
+	  	addresses = %w[ user@foo,com user_at_foo.org
 	  		example.user@foo. foo@bar_baz.com fpp@bar+bas.com ]
 	  	addresses.each do |invalid_addr|
 	  		@user.email = invalid_addr
@@ -71,7 +81,7 @@ describe User do
   	it "should be valid" do
   		addresses = %w[ user@foo.COM A_US-ER@f.b.org frst.lst@fo.jp a+b@baz.cn ]
   		addresses.each do |valid_addr|
-  			@user.email = valid_addr	
+  			@user.email = valid_addr
   			@user.should be_valid
   		end
   	end
@@ -86,7 +96,7 @@ describe User do
 
     it { should_not be_valid }
   end
- 
+
   describe "email address with mixed case" do
     let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
 
