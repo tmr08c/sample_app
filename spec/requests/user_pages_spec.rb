@@ -35,9 +35,11 @@ describe "User pages" do
         let(:admin) { FactoryGirl.create(:admin) }
 
         before do
+          click_link "Sign out"
           valid_signin admin
           visit users_path
         end
+
 
         it { should have_link('delete', href: user_path(User.first))}
         it "should be able to delete another user" do
@@ -45,7 +47,6 @@ describe "User pages" do
         end
         # Should not be able to delete itself
         it { should_not have_link('delete', href: user_path(:admin))}
-        end
       end
     end
   end
@@ -59,10 +60,19 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) {FactoryGirl.create(:user)}
+    let!(:m1) {FactoryGirl.create(:micropost, user: user, content: "Bar")}
+    let!(:m2) {FactoryGirl.create(:micropost, user: user, content: "Food")}
+
     before { visit user_path(user) }
 
     it { should have_selector('h1',	text: user.name) }
     it { should have_selector('title', text: user.name) }
+
+    describe "microposts" do
+      it { should have_content(m1.content)}
+      it { should have_content(m2.content)}
+      it { should have_content(user.microposts.count)}
+    end
   end
 
   describe "signup" do
@@ -142,5 +152,4 @@ describe "User pages" do
       specify { user.reload.email.should == new_email }
     end
   end
-
 end
